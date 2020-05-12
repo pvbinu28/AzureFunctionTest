@@ -11,7 +11,7 @@ const blobTrigger: AzureFunction = async function (context: Context, myBlob: any
     const connectionString = process.env.docsnt1_STORAGE;
     
     // This is used for creating result location.
-    const itemName = String(context.bindingData.name).replace(".pdf", '');
+    const itemName = String(context.bindingData.name).replace(".pdf", '').toLowerCase().replace(' ', '');
 
     //Unique name for file to process.
     const tempName = uuidv4();
